@@ -57,7 +57,7 @@ config.network.rpn_with_norm = 'none'
 config.network.has_fpn = True
 config.network.fpn_feature_dim = 256
 config.network.fpn_with_gap = False
-config.network.fpn_upsample_method = 'nearest'
+config.network.fpn_upsample_method = 'nearest'     #上采样方法：最近邻插值
 config.network.fpn_with_norm = 'none'
 
 # rcnn
@@ -85,12 +85,12 @@ config.dataset = edict()
 # training related params
 config.train = edict()
 
-config.train.use_horovod = False
+config.train.use_horovod = False    #horovod分布式训练框架
 config.train.lr_schedule = 'step'
-config.train.flip = True
-config.train.shuffle = True
+config.train.flip = True       #数据增强：翻转变换
+config.train.shuffle = True    #训练数据集充分打散
 config.train.resume = False
-config.train.begin_iteration = 0
+config.train.begin_iteration = 0   #开始的迭代次数
 config.train.eval_data = True
 
 # config.train.warmup_iteration = 0
